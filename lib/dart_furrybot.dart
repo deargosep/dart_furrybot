@@ -51,5 +51,5 @@ void sendAIM(TeleDart teledart, TeleDartMessage event, GPT3 api) async {
 
   print(completed);
   // lastMessage = completed;
-  event.reply(completed, withQuote: true);
+  event.reply(completed, reply_markup: ForceReply(force_reply: true));
 }
