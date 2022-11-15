@@ -35,7 +35,7 @@ void startBot() async {
           maxTokens: 200,
           stop: 'You:',
           topP: 1,
-          temperature: 0.5,
+          temperature: 0.8,
           frequencyPenalty: 0.5,
           presencePenalty: 0);
       List<int> codeUnits = result.choices[0].text.codeUnits;
