@@ -29,7 +29,7 @@ void startBot() async {
       teledart.sendChatAction(event.chat.id, 'typing');
       print(event.text);
       var result = await api.completion(
-          "${lastMessage != '' ? 'Friend: ${lastMessage.trim()}\n' : ''}You: ${event.text!.trim()}\nFriend:",
+          "${lastMessage != '' ? 'Friend: ${lastMessage.trim()}\n' : ''}You: ${event.text?.trim()}\nFriend:",
           // temperature: 0,
           maxTokens: 200,
           stop: 'You:',
