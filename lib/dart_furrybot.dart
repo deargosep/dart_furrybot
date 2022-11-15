@@ -27,7 +27,10 @@ void startBot() async {
 
   String lastMessage = initialPrompt;
   teledart.onMessage().listen((event) async {
-    if (event.chat.type == 'private' || event.reply_to_message != null) {
+    if (event.chat.type == 'private' ||
+        (event.reply_to_message != null &&
+            event.reply_to_message?.from?.username ==
+                'furry_entertainment_bot')) {
       sendAIM(teledart, event, api);
     }
   });
