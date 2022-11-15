@@ -27,7 +27,7 @@ void startBot() async {
 
   String lastMessage = initialPrompt;
   teledart.onMessage().listen((event) async {
-    if (event.chat.type == 'private') {
+    if (event.chat.type == 'private' || event.reply_to_message != null) {
       sendAIM(teledart, event, api);
     }
   });
