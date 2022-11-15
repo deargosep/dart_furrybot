@@ -38,7 +38,7 @@ void sendAIM(TeleDart teledart, TeleDartMessage event, GPT3 api) async {
   print(event.text);
   var result = await api.completion(
       // ${lastMessage != '' ? 'Friend: ${lastMessage.trim()}\n' : ''}
-      "You: ${event.text?.trim()}\nFriend:",
+      "You: ${event.text?.replaceAll('@furry_entertainment_bot', '').trim()}\nFriend:",
       // temperature: 0,
       maxTokens: 200,
       stop: 'You:',
